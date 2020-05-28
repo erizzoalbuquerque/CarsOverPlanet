@@ -1,5 +1,5 @@
 # CarsOverPlanet
-It'a a game about cars over a planet.
+It'a a game about cars over a planet. And YOU CAN PLAY it here: https://erizzoalbuquerque.github.io/CarsOverPlanet/https://erizzoalbuquerque.github.io/CarsOverPlanet/Docs/Game/index.html
 
 ![Cover](/Docs/Images/cover.png)
 
