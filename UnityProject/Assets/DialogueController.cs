@@ -63,4 +63,9 @@ public class DialogueController : MonoBehaviour
         speakSequence.AppendInterval(_duration);
         speakSequence.Append(transform.DOScale(0f, 0.2f));
     }
+
+    private void OnDestroy()
+    {
+        speakSequence.Kill();
+    }
 }

@@ -63,19 +63,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _tmp: {fileID: 8795660759855375295}
-  _duration: 4
+  _duration: 3
   _debugTrigger: 0
   _curseLines:
-  - Fuck!
-  - Damn it!
-  - Shit!
-  - FUCK!
-  - I HATE YOU!
+  - DAMN!
+  - SHIT!
+  - FUCK!!!
   - SHIT!
   _victoryLines:
   - Yeah!
   - Fuck you!!
   - Awesome!
+  - We won!
+  - Victory!
 --- !u!1 &1186028872587238276
 GameObject:
   m_ObjectHideFlags: 0
@@ -373,7 +373,7 @@ MonoBehaviour:
   _steeringMultiplier: 2.5
   _steeringConstant: 1
   _maxSpeed: 10
-  _minSpeedToCrash: 0
+  _minForceToCrash: 100
   _crashLayerMask:
     serializedVersion: 2
     m_Bits: 0
