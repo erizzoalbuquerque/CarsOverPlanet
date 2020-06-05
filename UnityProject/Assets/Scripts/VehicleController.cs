@@ -11,7 +11,7 @@ public class VehicleController : MonoBehaviour
     public float _steeringConstant = 1f;
     public float _maxSpeed = 10f;
 
-    public float _minSpeedToCrash = 5f;
+    public float _minForceToCrash = 100f;
     public LayerMask _crashLayerMask;
     public float _minTimeBetweenCrashEvents = 0f;
     public UnityEvent _crashEvent;
@@ -62,8 +62,9 @@ public class VehicleController : MonoBehaviour
     {
         if (_crashLayerMask != (_crashLayerMask | (1 << collision.collider.gameObject.layer)))
             return;
+        print(collision.impulse.magnitude / Time.fixedDeltaTime);
 
-        if (_minSpeedToCrash != 0f && collision.relativeVelocity.magnitude > _minSpeedToCrash)
+        if (_minForceToCrash != 0f && (collision.impulse.magnitude / Time.fixedDeltaTime) > _minForceToCrash)
             Crash();
     }
 
