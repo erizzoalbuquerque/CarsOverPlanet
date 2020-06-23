@@ -29,10 +29,15 @@ public class GameManager : MonoBehaviour
 
     bool _playerChrashed = false;
 
+    bool _gameOver = false;
+
+    float _policeVictoryScreamTimer = 0f;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        _gameOver = false;
+        _policeVictoryScreamTimer = 0f;
     }
 
     // Update is called once per frame
@@ -40,6 +45,19 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R))
             Restart();
+
+        //if (_gameOver)
+        //{
+        //    _policeVictoryScreamTimer += Time.deltaTime;
+        //
+        //    if(_policeVictoryScreamTimer > 5f)
+        //    {
+        //        DialogueController[] dc = FindObjectsOfType<DialogueController>();
+        //        int index = Random.Range(0, dc.Length);
+        //        dc[index].SayAVictoryLine();
+        //        _policeVictoryScreamTimer = 0f;
+        //    }
+        //}
     }
 
     public void DoSlowMotion()
@@ -88,6 +106,7 @@ public class GameManager : MonoBehaviour
     void ActivateBustedText()
     {
         uiBusted.SetActive(true);
+        _gameOver = true;
     }
 
     void Restart()

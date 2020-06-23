@@ -10,28 +10,34 @@ public class VehicleController : MonoBehaviour
     public float _steeringMultiplier;
     public float _steeringConstant = 1f;
     public float _maxSpeed = 10f;
-    public float _minSpeedToCrash = 5f;
 
+    public float _minForceToCrash = 100f;
+    public LayerMask _crashLayerMask;
+    public float _minTimeBetweenCrashEvents = 0f;
     public UnityEvent _crashEvent;
 
     Rigidbody _rb;
     float _forwardInput,_steeringInput;
+    float _lastCrashEventTime = 0f;
 
-    public void SetInput(float forward, float steering)
-    {
-        _forwardInput = Mathf.Clamp(forward,-1f,1f);
-        _steeringInput = Mathf.Clamp(steering, -1f, 1f);
-    }
+
 
     // Start is called before the first frame update
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
+        _lastCrashEventTime = Time.time;
     }
 
     void FixedUpdate()
     {
         Move();
+    }
+
+    public void SetInput(float forward, float steering)
+    {
+        _forwardInput = Mathf.Clamp(forward, -1f, 1f);
+        _steeringInput = Mathf.Clamp(steering, -1f, 1f);
     }
 
     void Move()
@@ -52,15 +58,22 @@ public class VehicleController : MonoBehaviour
             _rb.velocity = _rb.velocity.normalized * _maxSpeed;
     }
 
-    private void OnCollisionEnter(Collision collision)
+    void OnCollisionEnter(Collision collision)
     {
-        if (_minSpeedToCrash != 0f && collision.relativeVelocity.magnitude > _minSpeedToCrash)
+        if (_crashLayerMask != (_crashLayerMask | (1 << collision.collider.gameObject.layer)))
+            return;
+        print(collision.impulse.magnitude / Time.fixedDeltaTime);
+
+        if (_minForceToCrash != 0f && (collision.impulse.magnitude / Time.fixedDeltaTime) > _minForceToCrash)
             Crash();
     }
 
-    private void Crash()
+    void Crash()
     {
-        Debug.Log("Crashed");
-        _crashEvent.Invoke();
+        if (Time.time - _lastCrashEventTime > _minTimeBetweenCrashEvents)
+        {
+            _crashEvent.Invoke();
+            _lastCrashEventTime = Time.time;
+        }
     }
 }
