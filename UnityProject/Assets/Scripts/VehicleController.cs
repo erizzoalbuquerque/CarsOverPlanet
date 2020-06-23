@@ -6,10 +6,11 @@ using UnityEngine.Events;
 
 public class VehicleController : MonoBehaviour
 {
-    public float _forwardMultiplier;
-    public float _steeringMultiplier;
-    public float _steeringConstant = 1f;
+    public float _maxForwardAcceleration;
+    public float _maxSteeringAcceleration;
+    public float _minForwardSpeedToFullSteering = 1f;
     public float _maxSpeed = 10f;
+    public float _maxSteeringSpeed = 10f;
 
     public float _minForceToCrash = 100f;
     public LayerMask _crashLayerMask;
@@ -20,10 +21,12 @@ public class VehicleController : MonoBehaviour
     float _forwardInput,_steeringInput;
     float _lastCrashEventTime = 0f;
 
+    float _forwardSpeed, _desiredForwardSpeed;
+    float _steeringSpeed, _desiredSteeringSpeed;
 
 
-    // Start is called before the first frame update
-    void Start()
+
+    void Awake()
     {
         _rb = GetComponent<Rigidbody>();
         _lastCrashEventTime = Time.time;
@@ -38,24 +41,43 @@ public class VehicleController : MonoBehaviour
     {
         _forwardInput = Mathf.Clamp(forward, -1f, 1f);
         _steeringInput = Mathf.Clamp(steering, -1f, 1f);
+
+        _desiredForwardSpeed = _forwardInput * _maxSpeed;
+        _desiredSteeringSpeed = _steeringInput * _maxSteeringSpeed;
     }
 
     void Move()
     {
-        _rb.AddForce(_rb.transform.forward * _forwardMultiplier * _forwardInput);
-        //_rb.AddTorque(_rb.transform.up * _steeringInput * _steeringMultiplier);
-        var newAngVel = _rb.angularVelocity;
-        var newLocalAngVel = _rb.transform.InverseTransformDirection(newAngVel);
-        newLocalAngVel = new Vector3(
-            newLocalAngVel.x,
-            _steeringInput * _steeringMultiplier * Mathf.Clamp01(_rb.velocity.magnitude * _steeringConstant),
-            newLocalAngVel.z);
-        newAngVel = _rb.transform.TransformDirection(newLocalAngVel);
-        _rb.angularVelocity = newAngVel;
+        //Forward Speed --------
+        Vector3 localVelocity = transform.InverseTransformDirection(_rb.velocity);
 
-        //MaxSpeed
-        if (_rb.velocity.magnitude > _maxSpeed)
-            _rb.velocity = _rb.velocity.normalized * _maxSpeed;
+        _forwardSpeed = localVelocity.z;
+        float maxSpeedChange = _maxForwardAcceleration * Time.deltaTime;
+        _forwardSpeed = Mathf.MoveTowards(_forwardSpeed, _desiredForwardSpeed, maxSpeedChange);
+
+        print("desired: " + _desiredForwardSpeed.ToString() + " current: " +  _forwardSpeed.ToString());
+
+        localVelocity = new Vector3(localVelocity.x, localVelocity.y, _forwardSpeed);
+        _rb.velocity = transform.TransformDirection(localVelocity);
+
+        //Steering Speed --------
+        Vector3 angularVelocity = _rb.angularVelocity;
+        Vector3 localAngularVelocity = _rb.transform.InverseTransformDirection(angularVelocity);
+
+        _steeringSpeed = localAngularVelocity.y;
+        float maxSteeringSpeedChange = _maxSteeringAcceleration * Time.deltaTime;
+        //_steeringSpeed = Mathf.MoveTowards(_steeringSpeed, _desiredSteeringSpeed, maxSteeringSpeedChange);
+        _steeringSpeed = _desiredSteeringSpeed;
+
+        //Slow Down Steering if Forward Speed is too slow
+        _steeringSpeed = _steeringSpeed * Mathf.Clamp01(_forwardSpeed / _minForwardSpeedToFullSteering);
+
+        localAngularVelocity = new Vector3(
+            localAngularVelocity.x,
+            _steeringSpeed,
+            localAngularVelocity.z);
+        angularVelocity = _rb.transform.TransformDirection(localAngularVelocity);
+        _rb.angularVelocity = angularVelocity;
     }
 
     void OnCollisionEnter(Collision collision)
