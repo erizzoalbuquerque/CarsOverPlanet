@@ -18,6 +18,9 @@ public class Aligner : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (!Application.isPlaying)
+            return;
+
         Align();
     }
 
@@ -27,7 +30,6 @@ public class Aligner : MonoBehaviour
 
         if (!_hasRigidBody)
         {
-            //this.transform.rotation = Quaternion.LookRotation(this.transform.forward,this.transform.position - _center.position);
             this.transform.rotation = rotation * transform.rotation;
         }
         else
@@ -39,7 +41,7 @@ public class Aligner : MonoBehaviour
 
     void Update()
     {
-        if (!Application.isEditor)
+        if (Application.isPlaying)
             return;
 
         Align();

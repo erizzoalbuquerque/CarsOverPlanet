@@ -15,6 +15,9 @@ public class RadialDistanceFixer : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (!Application.isPlaying)
+            return;
+
         if (_center != _oldCenter)
         {
             _distance = (this.transform.position - _center.position).magnitude;
@@ -41,7 +44,7 @@ public class RadialDistanceFixer : MonoBehaviour
 
     void Update()
     {
-        if (!Application.isEditor)
+        if (Application.isPlaying)
             return;
 
         if (_center != _oldCenter)
