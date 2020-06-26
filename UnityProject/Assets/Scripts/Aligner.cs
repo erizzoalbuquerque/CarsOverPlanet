@@ -6,43 +6,43 @@ using UnityEngine;
 public class Aligner : MonoBehaviour
 {
     public Transform _center;
-    public bool _hasRigidBody;
 
     Rigidbody _rb;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
+        _rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        Align();
+        if (Application.isPlaying)
+        {
+            if (_rb != null)
+            {
+                Quaternion rotation = Quaternion.FromToRotation(transform.up, this.transform.position - _center.position);
+                _rb.MoveRotation(rotation * transform.rotation);
+            }
+        }
+        else
+        {
+            return;
+        }
     }
 
-    void Align()
-    {
-        Quaternion rotation = Quaternion.FromToRotation(transform.up, this.transform.position - _center.position);
 
-        if (!_hasRigidBody)
+    void Update()
+    {
+        if (!Application.isPlaying)
         {
-            //this.transform.rotation = Quaternion.LookRotation(this.transform.forward,this.transform.position - _center.position);
+            Quaternion rotation = Quaternion.FromToRotation(transform.up, this.transform.position - _center.position);
             this.transform.rotation = rotation * transform.rotation;
         }
         else
         {
-            if (_rb == null) _rb = GetComponent<Rigidbody>();
-            _rb.MoveRotation(rotation * transform.rotation);
+            return;
         }
     }
-
-    void Update()
-    {
-        if (!Application.isEditor)
-            return;
-
-        Align();
-    }
-
 }
