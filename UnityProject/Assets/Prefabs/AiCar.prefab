@@ -70,6 +70,7 @@ MonoBehaviour:
   - SHIT!
   - FUCK!!!
   - SHIT!
+  - HATE YOU!
   _victoryLines:
   - Yeah!
   - Fuck you!!
@@ -325,7 +326,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _center: {fileID: 0}
-  _hasRigidBody: 1
 --- !u!114 &2918587901325712048
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -369,10 +369,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d3ca54c0e03a774099665f45daf6979, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _forwardMultiplier: 30
-  _steeringMultiplier: 2.5
-  _steeringConstant: 1
+  _maxForwardAcceleration: 0
+  _maxSteeringAcceleration: 0
+  _minForwardSpeedToFullSteering: 1
   _maxSpeed: 10
+  _maxSteeringSpeed: 10
   _minForceToCrash: 100
   _crashLayerMask:
     serializedVersion: 2
@@ -5210,7 +5211,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0, y: 1.75}
+  m_AnchoredPosition: {x: -0.068, y: 1.675}
   m_SizeDelta: {x: 20, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &4735489613967017733
@@ -5509,7 +5510,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9b2f56cab366a90419e79609e075b9ae, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
