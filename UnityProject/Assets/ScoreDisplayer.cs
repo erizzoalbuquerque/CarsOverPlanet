@@ -17,8 +17,7 @@ public class ScoreDisplayer : MonoBehaviour
 
     int score;
 
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         score = -1;
         UpdateScore(score, false);

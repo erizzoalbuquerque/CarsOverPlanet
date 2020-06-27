@@ -27,20 +27,21 @@ public class GameManager : MonoBehaviour
     public GameObject _explosion;
     //public GameObject _crashSmoke;
 
+    [Space(), Header("Score Display")]
+    public ScoreDisplayer _scoreDisplayer;
+
     bool _playerChrashed = false;
 
     bool _gameOver = false;
 
-    float _policeVictoryScreamTimer = 0f;
-
     int _score;
 
-    // Start is called before the first frame update
+
     void Start()
     {
         _gameOver = false;
         _score = 0;
-        _policeVictoryScreamTimer = 0f;
+        _scoreDisplayer.UpdateScore(_score, false);
     }
 
     // Update is called once per frame
@@ -48,19 +49,6 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R))
             Restart();
-
-        //if (_gameOver)
-        //{
-        //    _policeVictoryScreamTimer += Time.deltaTime;
-        //
-        //    if(_policeVictoryScreamTimer > 5f)
-        //    {
-        //        DialogueController[] dc = FindObjectsOfType<DialogueController>();
-        //        int index = Random.Range(0, dc.Length);
-        //        dc[index].SayAVictoryLine();
-        //        _policeVictoryScreamTimer = 0f;
-        //    }
-        //}
     }
 
     public void OnPlayerCrashed()
@@ -94,8 +82,6 @@ public class GameManager : MonoBehaviour
 
     void DoSlowMotionCompleted()
     {
-        //Time.timeScale = 1.0f;
-        //Time.fixedDeltaTime = Time.fixedDeltaTime * 1f / _slowMoMultiplier;
         DOTween.To(() => Time.timeScale, x => Time.timeScale = x, 1.0f, _slowMoTime);
         DOTween.To(() => Time.fixedDeltaTime, x => Time.fixedDeltaTime = x, Time.fixedDeltaTime * 1f / _slowMoMultiplier, _slowMoTime);
         playerPostCrashVcam.gameObject.SetActive(true);
@@ -122,9 +108,10 @@ public class GameManager : MonoBehaviour
 
     public void OnEnemyCrashed()
     {
-       if (_gameOver)
+       if (!_gameOver)
        {
             _score += 1;
+            _scoreDisplayer.UpdateScore(_score);
        }
     }
 }
