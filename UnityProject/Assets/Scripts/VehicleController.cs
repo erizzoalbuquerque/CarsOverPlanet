@@ -55,7 +55,7 @@ public class VehicleController : MonoBehaviour
         float maxSpeedChange = _maxForwardAcceleration * Time.deltaTime;
         _forwardSpeed = Mathf.MoveTowards(_forwardSpeed, _desiredForwardSpeed, maxSpeedChange);
 
-        print("desired: " + _desiredForwardSpeed.ToString() + " current: " +  _forwardSpeed.ToString());
+        //print("desired: " + _desiredForwardSpeed.ToString() + " current: " +  _forwardSpeed.ToString());
 
         localVelocity = new Vector3(localVelocity.x, localVelocity.y, _forwardSpeed);
         _rb.velocity = transform.TransformDirection(localVelocity);

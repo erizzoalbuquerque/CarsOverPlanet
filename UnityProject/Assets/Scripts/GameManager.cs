@@ -33,10 +33,13 @@ public class GameManager : MonoBehaviour
 
     float _policeVictoryScreamTimer = 0f;
 
+    int _score;
+
     // Start is called before the first frame update
     void Start()
     {
         _gameOver = false;
+        _score = 0;
         _policeVictoryScreamTimer = 0f;
     }
 
@@ -60,7 +63,7 @@ public class GameManager : MonoBehaviour
         //}
     }
 
-    public void DoSlowMotion()
+    public void OnPlayerCrashed()
     {
         if (_playerChrashed == true)
             return;
@@ -115,5 +118,13 @@ public class GameManager : MonoBehaviour
         Time.fixedDeltaTime = 0.02f;
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void OnEnemyCrashed()
+    {
+       if (_gameOver)
+       {
+            _score += 1;
+       }
     }
 }
