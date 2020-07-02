@@ -84,7 +84,7 @@ public class VehicleController : MonoBehaviour
     {
         if (_crashLayerMask != (_crashLayerMask | (1 << collision.collider.gameObject.layer)))
             return;
-        print(collision.impulse.magnitude / Time.fixedDeltaTime);
+        print(this.gameObject.name + " COLLIDED: " + collision.impulse.magnitude / Time.fixedDeltaTime);
 
         if (_minForceToCrash != 0f && (collision.impulse.magnitude / Time.fixedDeltaTime) > _minForceToCrash)
             Crash();
