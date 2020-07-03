@@ -30,9 +30,9 @@ public class VehicleController : MonoBehaviour
     /// Min impulse to register crash event.
     /// </summary>
     [SerializeField] float _minImpulseToCrash = 100f;
-    [SerializeField] LayerMask _crashLayerMask;
+    [SerializeField] LayerMask _crashLayerMask = -1;
     [SerializeField] float _minTimeBetweenCrashEvents = 0f;
-    [SerializeField] UnityEvent _crashEvent;
+    [SerializeField] UnityEvent _crashEvent = null;
 
     Rigidbody _rb;
     float _forwardInput,_steeringInput;
@@ -81,8 +81,8 @@ public class VehicleController : MonoBehaviour
 
         _steeringSpeed = localAngularVelocity.y;
         float maxSteeringSpeedChange = _maxSteeringAcceleration * Time.deltaTime;
-        //_steeringSpeed = Mathf.MoveTowards(_steeringSpeed, _desiredSteeringSpeed, maxSteeringSpeedChange);
-        _steeringSpeed = _desiredSteeringSpeed;
+        _steeringSpeed = Mathf.MoveTowards(_steeringSpeed, _desiredSteeringSpeed, maxSteeringSpeedChange);
+        //print("Desired Steering: " + _desiredSteeringSpeed + " Steering: " + _steeringSpeed);
 
         //Slow Down Steering if Forward Speed is too slow
         _steeringSpeed = _steeringSpeed * Mathf.Clamp01(_forwardSpeed / _minForwardSpeedToFullSteering);
