@@ -6,16 +6,33 @@ using UnityEngine.Events;
 
 public class VehicleController : MonoBehaviour
 {
-    public float _maxForwardAcceleration;
-    public float _maxSteeringAcceleration;
-    public float _minForwardSpeedToFullSteering = 1f;
-    public float _maxSpeed = 10f;
-    public float _maxSteeringSpeed = 10f;
+    [Space()]
+    [Header("Movement Parameters")]
+    /// <summary>
+    /// Max acceleration towards foward speed target.
+    /// </summary>
+    [SerializeField] float _maxForwardAcceleration = 30f;
+    /// <summary>
+    /// Max acceleration towards steering speed target.
+    /// </summary>
+    [SerializeField] float _maxSteeringAcceleration = 1000f;
+    /// <summary>
+    /// Min forward speed so vehicle can steer at full speed. It can't steer when speed is 0. Then it linearly interpolates to full steering.
+    /// </summary>
+    [SerializeField] float _minForwardSpeedToFullSteering = 1f;
+    [SerializeField] float _maxSpeed = 10f;
+    [SerializeField] float _maxSteeringSpeed = 10f;
 
-    public float _minForceToCrash = 100f;
-    public LayerMask _crashLayerMask;
-    public float _minTimeBetweenCrashEvents = 0f;
-    public UnityEvent _crashEvent;
+    [Space()]
+    [Header("Other Settings")]
+    [Space()]
+    /// <summary>
+    /// Min impulse to register crash event.
+    /// </summary>
+    [SerializeField] float _minImpulseToCrash = 100f;
+    [SerializeField] LayerMask _crashLayerMask;
+    [SerializeField] float _minTimeBetweenCrashEvents = 0f;
+    [SerializeField] UnityEvent _crashEvent;
 
     Rigidbody _rb;
     float _forwardInput,_steeringInput;
@@ -23,8 +40,6 @@ public class VehicleController : MonoBehaviour
 
     float _forwardSpeed, _desiredForwardSpeed;
     float _steeringSpeed, _desiredSteeringSpeed;
-
-
 
     void Awake()
     {
@@ -86,7 +101,7 @@ public class VehicleController : MonoBehaviour
             return;
         //print(this.gameObject.name + " COLLIDED: " + collision.impulse.magnitude / Time.fixedDeltaTime);
 
-        if (_minForceToCrash != 0f && (collision.impulse.magnitude / Time.fixedDeltaTime) > _minForceToCrash)
+        if (_minImpulseToCrash != 0f && (collision.impulse.magnitude / Time.fixedDeltaTime) > _minImpulseToCrash)
             Crash();
     }
 
