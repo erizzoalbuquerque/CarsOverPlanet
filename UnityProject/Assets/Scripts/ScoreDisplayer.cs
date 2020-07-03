@@ -7,7 +7,7 @@ using DG.Tweening;
 public class ScoreDisplayer : MonoBehaviour
 {
     [SerializeField]
-    Text text;
+    Text text = null;
 
     [SerializeField,Range(1.0f,2.0f)]
     float punchScaleMultiplier = 1.2f;

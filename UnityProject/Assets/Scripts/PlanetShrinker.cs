@@ -4,14 +4,9 @@ using UnityEngine;
 
 public class PlanetShrinker : MonoBehaviour
 {
-    [SerializeField]
-    Transform planetTransform;
-
-    [SerializeField]
-    float shrinkDuration;
-
-    [SerializeField]
-    float planetFinalRadius;
+    [SerializeField] Transform planetTransform = null;
+    [SerializeField] float shrinkDuration = 30;
+    [SerializeField] float planetFinalRadius = 0;
 
     List<RadialDistanceFixer> rdfs;
     float planetStartRadius;
