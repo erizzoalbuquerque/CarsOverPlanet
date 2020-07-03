@@ -27,9 +27,9 @@ public class VehicleController : MonoBehaviour
     [Header("Other Settings")]
     [Space()]
     /// <summary>
-    /// Min impulse to register crash event.
+    /// Min force to register crash event.
     /// </summary>
-    [SerializeField] float _minImpulseToCrash = 100f;
+    [SerializeField] float _minForceToCrash = 100f;
     [SerializeField] LayerMask _crashLayerMask = -1;
     [SerializeField] float _minTimeBetweenCrashEvents = 0f;
     [SerializeField] UnityEvent _crashEvent = null;
@@ -99,9 +99,10 @@ public class VehicleController : MonoBehaviour
     {
         if (_crashLayerMask != (_crashLayerMask | (1 << collision.collider.gameObject.layer)))
             return;
-        //print(this.gameObject.name + " COLLIDED: " + collision.impulse.magnitude / Time.fixedDeltaTime);
 
-        if (_minImpulseToCrash != 0f && (collision.impulse.magnitude / Time.fixedDeltaTime) > _minImpulseToCrash)
+        float crashForce = collision.impulse.magnitude / Time.fixedDeltaTime;
+        //print(this.gameObject.name + " Crash Force: " + crashForce);
+        if (_minForceToCrash != 0f && (crashForce) > _minForceToCrash)
             Crash();
     }
 
