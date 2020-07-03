@@ -287,8 +287,8 @@ GameObject:
   - component: {fileID: 2918587901325712048}
   - component: {fileID: 2918587901325712046}
   - component: {fileID: 2918587901325712047}
-  - component: {fileID: 2918587901325712045}
   - component: {fileID: 2918587901325712054}
+  - component: {fileID: 2918587901325712045}
   m_Layer: 0
   m_Name: AiCar
   m_TagString: Untagged
@@ -339,7 +339,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _center: {fileID: 0}
-  _hasRigidBody: 0
   _distance: 3.64
 --- !u!54 &2918587901325712046
 Rigidbody:
@@ -374,7 +373,7 @@ MonoBehaviour:
   _minForwardSpeedToFullSteering: 1
   _maxSpeed: 10
   _maxSteeringSpeed: 10
-  _minForceToCrash: 100
+  _minImpulseToCrash: 100
   _crashLayerMask:
     serializedVersion: 2
     m_Bits: 0
@@ -382,20 +381,6 @@ MonoBehaviour:
   _crashEvent:
     m_PersistentCalls:
       m_Calls: []
---- !u!136 &2918587901325712045
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2918587901325712051}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.24362126
-  m_Height: 1.0321664
-  m_Direction: 2
-  m_Center: {x: 2.1507105e-11, y: 0.2563792, z: -0.034082294}
 --- !u!114 &2918587901325712054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -412,6 +397,20 @@ MonoBehaviour:
   _forwardGain: 1
   _steeringGain: 1
   _waitTime: 2
+--- !u!136 &2918587901325712045
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2918587901325712051}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.24362126
+  m_Height: 1.0321664
+  m_Direction: 2
+  m_Center: {x: 2.1507105e-11, y: 0.2563792, z: -0.034082294}
 --- !u!1 &2918587902246733200
 GameObject:
   m_ObjectHideFlags: 0
