@@ -12,6 +12,11 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1186028872587238276, guid: 3400ad11addfdda49a6b66e0c24d1d90,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 1298278261108546054, guid: 3400ad11addfdda49a6b66e0c24d1d90,
         type: 3}
       propertyPath: _target
@@ -26,6 +31,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: police car
+      objectReference: {fileID: 0}
+    - target: {fileID: 1933981426738901632, guid: 3400ad11addfdda49a6b66e0c24d1d90,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2295836740723035686, guid: 3400ad11addfdda49a6b66e0c24d1d90,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2918587901325712047, guid: 3400ad11addfdda49a6b66e0c24d1d90,
         type: 3}
@@ -210,7 +225,7 @@ PrefabInstance:
     - target: {fileID: 2918587901325712051, guid: 3400ad11addfdda49a6b66e0c24d1d90,
         type: 3}
       propertyPath: m_Name
-      value: AiCar Follower
+      value: AiCar Follower Variant
       objectReference: {fileID: 0}
     - target: {fileID: 2918587901325712051, guid: 3400ad11addfdda49a6b66e0c24d1d90,
         type: 3}
@@ -241,6 +256,31 @@ PrefabInstance:
         type: 3}
       propertyPath: _waitTime
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3930487162166768840, guid: 3400ad11addfdda49a6b66e0c24d1d90,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5132194165636602525, guid: 3400ad11addfdda49a6b66e0c24d1d90,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5277708819325495584, guid: 3400ad11addfdda49a6b66e0c24d1d90,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514055724870790690, guid: 3400ad11addfdda49a6b66e0c24d1d90,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7772065585994756345, guid: 3400ad11addfdda49a6b66e0c24d1d90,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8795660759855375295, guid: 3400ad11addfdda49a6b66e0c24d1d90,
         type: 3}
