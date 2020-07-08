@@ -9,6 +9,12 @@ public class Police : MonoBehaviour
     public float _forwardGain = 1f;
     public float _steeringGain = 1f;
     public float _waitTime = 2f;
+    public Vector3 _followOffset = Vector3.zero;
+    public bool _periodicOffset = false;
+    public float _period = 0f;
+    public AnimationCurve _offsetGainCurve;
+    public bool _debugTarget = false;
+    public Color _debugTargetColor = Color.red;
 
     private VehicleController _vc;
     private Vector3 _targetLastKnownPosition = Vector3.zero;
@@ -33,7 +39,15 @@ public class Police : MonoBehaviour
 
         if (_playerTransform != null)
         {
-            _targetLastKnownPosition = _playerTransform.position;
+            float offsetGain;
+            if (_periodicOffset)
+            {
+                offsetGain = _offsetGainCurve.Evaluate((Time.time % _period) / _period);
+            }
+            else
+                offsetGain = 1f;
+
+            _targetLastKnownPosition = _playerTransform.position + _playerTransform.TransformDirection(_followOffset) * offsetGain;
         }
 
         Vector3 directionToPlayerInLocalFrame = transform.InverseTransformDirection (_targetLastKnownPosition -  this.transform.position);
@@ -48,5 +62,14 @@ public class Police : MonoBehaviour
     void Chase()
     {
         _chasing = true;
+    }
+
+    private void OnDrawGizmos()
+    {
+        if (_debugTarget)
+        {
+            Gizmos.color = _debugTargetColor;
+            Gizmos.DrawSphere(_targetLastKnownPosition, 0.2f);
+        }
     }
 }
