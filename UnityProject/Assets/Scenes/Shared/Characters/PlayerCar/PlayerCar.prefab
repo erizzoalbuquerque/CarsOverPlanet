@@ -14523,7 +14523,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _center: {fileID: 0}
-  _hasRigidBody: 1
 --- !u!114 &1472510708033929080
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14537,7 +14536,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _center: {fileID: 0}
-  _hasRigidBody: 1
   _distance: 3.64
 --- !u!54 &1472510708033929062
 Rigidbody:
@@ -24385,8 +24383,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[3]
       value: 
-      objectReference: {fileID: -7416217663357473095, guid: 1c23f32ea8e5e124598293e424a3c6fa,
-        type: 3}
+      objectReference: {fileID: 2100000, guid: f694e893577073947bd8a92978e4eab8, type: 2}
     - target: {fileID: -927199367670048503, guid: 94dc4dc992dd63b46b788db4471d3ad9,
         type: 3}
       propertyPath: m_Name

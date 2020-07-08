@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 8491505801435142274}
   - component: {fileID: 8491505801435142275}
   - component: {fileID: 8491505801435142273}
-  - component: {fileID: 8491505801435142301}
   m_Layer: 9
   m_Name: Tree
   m_TagString: Untagged
@@ -128,26 +127,6 @@ MonoBehaviour:
   _center: {fileID: 0}
   _distance: 3.6400027
 --- !u!114 &8491505801435142273
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 501604484855591603}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b3f726c9d1e29848ab8b722ba30c8e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  minForceToCrash: 50
-  minTimeBetweenCrash: 2
-  crashLayerMask:
-    serializedVersion: 2
-    m_Bits: 1847
-  shakeDuration: 1
-  shakeStrength: 4
-  shakeVibratto: 10
---- !u!114 &8491505801435142301
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
