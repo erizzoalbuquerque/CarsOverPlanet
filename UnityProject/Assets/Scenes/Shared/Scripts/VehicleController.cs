@@ -41,10 +41,13 @@ public class VehicleController : MonoBehaviour
     float _forwardSpeed, _desiredForwardSpeed;
     float _steeringSpeed, _desiredSteeringSpeed;
 
+    EngineSoundController engineSoundController;
+
     void Awake()
     {
         _rb = GetComponent<Rigidbody>();
         _lastCrashEventTime = Time.time;
+        engineSoundController = GetComponent<EngineSoundController>();
     }
 
     void FixedUpdate()
@@ -59,6 +62,11 @@ public class VehicleController : MonoBehaviour
 
         _desiredForwardSpeed = _forwardInput * _maxSpeed;
         _desiredSteeringSpeed = _steeringInput * _maxSteeringSpeed;
+
+        if (engineSoundController != null)
+        {
+            engineSoundController.TargetIntensity = Mathf.Abs(forward);
+        }
     }
 
     void Move()

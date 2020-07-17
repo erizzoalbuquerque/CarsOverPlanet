@@ -16,4 +16,9 @@ public class PlayerInput : MonoBehaviour
     {
         vc.SetInput(Input.GetAxis("Vertical"), Input.GetAxis("Horizontal"));
     }
+
+    private void OnDisable()
+    {
+        vc.SetInput(0f, 0f);
+    }
 }
