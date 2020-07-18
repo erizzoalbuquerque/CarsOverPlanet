@@ -452,6 +452,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 297498928}
     m_Modifications:
+    - target: {fileID: 422284770, guid: e367b11ba1af0cf4683f968345bdd214, type: 3}
+      propertyPath: volume
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1660542557959104954, guid: e367b11ba1af0cf4683f968345bdd214,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -693,6 +697,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 297498928}
     m_Modifications:
+    - target: {fileID: 422284769, guid: e367b11ba1af0cf4683f968345bdd214, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 422284770, guid: e367b11ba1af0cf4683f968345bdd214, type: 3}
+      propertyPath: audios.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 422284770, guid: e367b11ba1af0cf4683f968345bdd214, type: 3}
+      propertyPath: audios.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 0671283079def044d9fffd6e6970e11a, type: 3}
     - target: {fileID: 1660542557959104954, guid: e367b11ba1af0cf4683f968345bdd214,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -752,11 +768,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Box
-      objectReference: {fileID: 0}
-    - target: {fileID: 1660542557959104958, guid: e367b11ba1af0cf4683f968345bdd214,
-        type: 3}
-      propertyPath: m_Mass
-      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 1660542557959104959, guid: e367b11ba1af0cf4683f968345bdd214,
         type: 3}
@@ -2190,6 +2201,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 720057758486456064, guid: 992e3036e39d1d649a04bc96429ecaba,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 934797117781072265, guid: 992e3036e39d1d649a04bc96429ecaba,
         type: 3}
       propertyPath: _target
@@ -2215,6 +2231,11 @@ PrefabInstance:
       propertyPath: _center
       value: 
       objectReference: {fileID: 615144280}
+    - target: {fileID: 3410735890424614051, guid: 992e3036e39d1d649a04bc96429ecaba,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3410735890424614054, guid: 992e3036e39d1d649a04bc96429ecaba,
         type: 3}
       propertyPath: _playerTransform
@@ -3781,7 +3802,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &3926452840474558300
 BoxCollider:
   m_ObjectHideFlags: 0

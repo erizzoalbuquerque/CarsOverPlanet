@@ -8,7 +8,7 @@ public class EngineSoundController : MonoBehaviour
     [SerializeField] Vector2 engineVolumeRange = Vector2.zero;
     [SerializeField] Vector2 enginePitchRange = Vector2.zero;
     [SerializeField] AudioSource audioSource;
-    [SerializeField] float maxVariationPerSecond = 0.1f;
+    [SerializeField] float maxVariationPerSecond = 1f;
 
     [SerializeField, Range(0f,1f)] float intensity = 0f;
 
