@@ -116,11 +116,11 @@ MonoBehaviour:
   m_Name: Game Over Post Processing
   m_EditorClassIdentifier: 
   components:
-  - {fileID: 7827467830613083823}
   - {fileID: -4985669519968519704}
   - {fileID: -8044813937561711927}
   - {fileID: -1491622959306187883}
---- !u!114 &7827467830613083823
+  - {fileID: 7536095313080188609}
+--- !u!114 &7536095313080188609
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -136,11 +136,11 @@ MonoBehaviour:
   m_AdvancedMode: 0
   threshold:
     m_OverrideState: 1
-    m_Value: 5.62
+    m_Value: 0.9
     min: 0
   intensity:
-    m_OverrideState: 0
-    m_Value: 0
+    m_OverrideState: 1
+    m_Value: 1.5
     min: 0
   scatter:
     m_OverrideState: 0

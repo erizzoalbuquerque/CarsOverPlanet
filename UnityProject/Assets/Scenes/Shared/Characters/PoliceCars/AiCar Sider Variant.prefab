@@ -410,17 +410,17 @@ PrefabInstance:
     - target: {fileID: 5231672630854100834, guid: 3400ad11addfdda49a6b66e0c24d1d90,
         type: 3}
       propertyPath: _curseLines.Array.data[5]
-      value: HATE YOU!
+      value: SHH--IT!!
       objectReference: {fileID: 0}
     - target: {fileID: 5231672630854100834, guid: 3400ad11addfdda49a6b66e0c24d1d90,
         type: 3}
       propertyPath: _curseLines.Array.data[6]
-      value: HATE YOU!
+      value: STOP IT!
       objectReference: {fileID: 0}
     - target: {fileID: 5231672630854100834, guid: 3400ad11addfdda49a6b66e0c24d1d90,
         type: 3}
       propertyPath: _curseLines.Array.data[7]
-      value: HATE YOU!
+      value: FUUUCK!
       objectReference: {fileID: 0}
     - target: {fileID: 5277708819325495584, guid: 3400ad11addfdda49a6b66e0c24d1d90,
         type: 3}

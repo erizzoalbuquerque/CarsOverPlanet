@@ -292,8 +292,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a6c245afae18db47afdb5d669c266d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerTransform: {fileID: 814961742}
-  planetTransform: {fileID: 0}
 --- !u!82 &25213587
 AudioSource:
   m_ObjectHideFlags: 0
