@@ -15,12 +15,23 @@ public class ScoreDisplayer : MonoBehaviour
     [SerializeField, Range(0f, 1f)]
     float punchScaleDuration = 0.3f;
 
+    [SerializeField]
+    AudioClip scoreSound;
+
+    [SerializeField]
+    float soundVolume = 1f;
+
+    [SerializeField]
+    float delayInSeconds = 1f;
+
     int score;
+    AudioSource audioSource;
 
     void Awake()
     {
         score = -1;
         UpdateScore(score, false);
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Display(bool animate = true)
@@ -31,16 +42,29 @@ public class ScoreDisplayer : MonoBehaviour
         {
             text.rectTransform.localScale = punchScaleMultiplier * Vector3.one;
             text.rectTransform.DOScale(Vector3.one, punchScaleDuration).SetEase(Ease.OutBounce);
+            
+            if (audioSource != null && scoreSound != null)
+                audioSource.PlayOneShot(scoreSound, soundVolume);
         }
     }
 
     public void UpdateScore(int newScore, bool animate = true)
     {
-        score = newScore;
-        Display(animate);
+        StartCoroutine(UpdateScoreCoroutine(newScore, animate));
     }
 
-    [ContextMenu("TestUpdate")]
+    IEnumerator UpdateScoreCoroutine(int newScore, bool animate)
+    {
+        yield return new WaitForSeconds(delayInSeconds);
+
+        score = newScore;
+        Display(animate);
+
+        yield return 0;
+    }
+
+
+    [ContextMenu("TestUpdateScore")]
     void TestUpdate()
     {
         UpdateScore(score + 1);

@@ -72,6 +72,9 @@ MonoBehaviour:
   - FUCK!!!
   - SHIT!
   - HATE YOU!
+  - AFF!
+  - STOP IT!!!
+  - FUUUCK!!
   _victoryLines:
   - Yeah!
   - Fuck you!!
@@ -485,10 +488,10 @@ MonoBehaviour:
   _minForwardSpeedToFullSteering: 5
   _maxSpeed: 13
   _maxSteeringSpeed: 5
-  _minForceToCrash: 200
+  _minForceToCrash: 30
   _crashLayerMask:
     serializedVersion: 2
-    m_Bits: 1536
+    m_Bits: 3584
   _minTimeBetweenCrashEvents: 3
   _crashEvent:
     m_PersistentCalls:
@@ -530,7 +533,7 @@ MonoBehaviour:
   _playerTransform: {fileID: 0}
   _forwardGain: 1
   _steeringGain: 1
-  _waitTime: 1
+  _waitTime: 2.5
   _followOffset: {x: 0, y: 0, z: 0}
   _periodicOffset: 0
   _period: 0

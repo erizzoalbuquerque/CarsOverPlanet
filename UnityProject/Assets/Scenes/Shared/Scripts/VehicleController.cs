@@ -109,7 +109,7 @@ public class VehicleController : MonoBehaviour
             return;
 
         float crashForce = collision.impulse.magnitude / Time.fixedDeltaTime;
-        //print(this.gameObject.name + " Crash Force: " + crashForce);
+        print("[" + this.gameObject.name + "]" + " COLLIDED against: [" + collision.transform.name + "] || Crash Force: " + crashForce);
         if (_minForceToCrash != 0f && (crashForce) > _minForceToCrash)
             Crash();
     }

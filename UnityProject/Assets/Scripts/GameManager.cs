@@ -64,6 +64,8 @@ public class GameManager : MonoBehaviour
         if (_playerChrashed == true)
             return;
 
+        _gameOver = true;
+
         Time.timeScale = _slowMoMultiplier;
         Time.fixedDeltaTime = Time.fixedDeltaTime * _slowMoMultiplier;
 
@@ -105,7 +107,7 @@ public class GameManager : MonoBehaviour
     void ActivateBustedText()
     {
         uiBusted.SetActive(true);
-        _gameOver = true;
+        //_gameOver = true;
 
         _gameOverAudioSnapshot.TransitionTo(5f);
     }

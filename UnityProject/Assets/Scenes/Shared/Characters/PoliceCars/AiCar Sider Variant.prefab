@@ -94,18 +94,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2918587901325712047, guid: 3400ad11addfdda49a6b66e0c24d1d90,
         type: 3}
-      propertyPath: _minForceToCrash
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 2918587901325712047, guid: 3400ad11addfdda49a6b66e0c24d1d90,
-        type: 3}
       propertyPath: _minTimeBetweenCrashEvents
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2918587901325712047, guid: 3400ad11addfdda49a6b66e0c24d1d90,
         type: 3}
       propertyPath: _maxForwardAcceleration
-      value: 28
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 2918587901325712047, guid: 3400ad11addfdda49a6b66e0c24d1d90,
         type: 3}
@@ -234,13 +229,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2918587901325712054, guid: 3400ad11addfdda49a6b66e0c24d1d90,
         type: 3}
-      propertyPath: _playerTransform
-      value: 
+      propertyPath: _offsetGainCurve.m_Curve.Array.size
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2918587901325712054, guid: 3400ad11addfdda49a6b66e0c24d1d90,
         type: 3}
-      propertyPath: _waitTime
-      value: 1.5
+      propertyPath: _playerTransform
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2918587901325712054, guid: 3400ad11addfdda49a6b66e0c24d1d90,
         type: 3}
@@ -261,6 +256,131 @@ PrefabInstance:
         type: 3}
       propertyPath: _followOffset.y
       value: -6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2918587901325712054, guid: 3400ad11addfdda49a6b66e0c24d1d90,
+        type: 3}
+      propertyPath: _waitTime
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2918587901325712054, guid: 3400ad11addfdda49a6b66e0c24d1d90,
+        type: 3}
+      propertyPath: _period
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2918587901325712054, guid: 3400ad11addfdda49a6b66e0c24d1d90,
+        type: 3}
+      propertyPath: _offsetGainCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2918587901325712054, guid: 3400ad11addfdda49a6b66e0c24d1d90,
+        type: 3}
+      propertyPath: _offsetGainCurve.m_Curve.Array.data[0].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 2918587901325712054, guid: 3400ad11addfdda49a6b66e0c24d1d90,
+        type: 3}
+      propertyPath: _offsetGainCurve.m_Curve.Array.data[0].outWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 2918587901325712054, guid: 3400ad11addfdda49a6b66e0c24d1d90,
+        type: 3}
+      propertyPath: _offsetGainCurve.m_Curve.Array.data[1].time
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2918587901325712054, guid: 3400ad11addfdda49a6b66e0c24d1d90,
+        type: 3}
+      propertyPath: _offsetGainCurve.m_Curve.Array.data[1].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2918587901325712054, guid: 3400ad11addfdda49a6b66e0c24d1d90,
+        type: 3}
+      propertyPath: _offsetGainCurve.m_Curve.Array.data[1].inSlope
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2918587901325712054, guid: 3400ad11addfdda49a6b66e0c24d1d90,
+        type: 3}
+      propertyPath: _offsetGainCurve.m_Curve.Array.data[1].outSlope
+      value: 0.17123912
+      objectReference: {fileID: 0}
+    - target: {fileID: 2918587901325712054, guid: 3400ad11addfdda49a6b66e0c24d1d90,
+        type: 3}
+      propertyPath: _offsetGainCurve.m_Curve.Array.data[1].tangentMode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2918587901325712054, guid: 3400ad11addfdda49a6b66e0c24d1d90,
+        type: 3}
+      propertyPath: _offsetGainCurve.m_Curve.Array.data[1].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 2918587901325712054, guid: 3400ad11addfdda49a6b66e0c24d1d90,
+        type: 3}
+      propertyPath: _offsetGainCurve.m_Curve.Array.data[1].outWeight
+      value: 0.17545037
+      objectReference: {fileID: 0}
+    - target: {fileID: 2918587901325712054, guid: 3400ad11addfdda49a6b66e0c24d1d90,
+        type: 3}
+      propertyPath: _offsetGainCurve.m_Curve.Array.data[2].time
+      value: 0.8267751
+      objectReference: {fileID: 0}
+    - target: {fileID: 2918587901325712054, guid: 3400ad11addfdda49a6b66e0c24d1d90,
+        type: 3}
+      propertyPath: _offsetGainCurve.m_Curve.Array.data[2].value
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2918587901325712054, guid: 3400ad11addfdda49a6b66e0c24d1d90,
+        type: 3}
+      propertyPath: _offsetGainCurve.m_Curve.Array.data[2].inSlope
+      value: 0.028344154
+      objectReference: {fileID: 0}
+    - target: {fileID: 2918587901325712054, guid: 3400ad11addfdda49a6b66e0c24d1d90,
+        type: 3}
+      propertyPath: _offsetGainCurve.m_Curve.Array.data[2].outSlope
+      value: 0.04534626
+      objectReference: {fileID: 0}
+    - target: {fileID: 2918587901325712054, guid: 3400ad11addfdda49a6b66e0c24d1d90,
+        type: 3}
+      propertyPath: _offsetGainCurve.m_Curve.Array.data[2].tangentMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2918587901325712054, guid: 3400ad11addfdda49a6b66e0c24d1d90,
+        type: 3}
+      propertyPath: _offsetGainCurve.m_Curve.Array.data[2].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 2918587901325712054, guid: 3400ad11addfdda49a6b66e0c24d1d90,
+        type: 3}
+      propertyPath: _offsetGainCurve.m_Curve.Array.data[2].outWeight
+      value: 0.24254455
+      objectReference: {fileID: 0}
+    - target: {fileID: 2918587901325712054, guid: 3400ad11addfdda49a6b66e0c24d1d90,
+        type: 3}
+      propertyPath: _offsetGainCurve.m_Curve.Array.data[3].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2918587901325712054, guid: 3400ad11addfdda49a6b66e0c24d1d90,
+        type: 3}
+      propertyPath: _offsetGainCurve.m_Curve.Array.data[3].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2918587901325712054, guid: 3400ad11addfdda49a6b66e0c24d1d90,
+        type: 3}
+      propertyPath: _offsetGainCurve.m_Curve.Array.data[3].inSlope
+      value: -0.1212768
+      objectReference: {fileID: 0}
+    - target: {fileID: 2918587901325712054, guid: 3400ad11addfdda49a6b66e0c24d1d90,
+        type: 3}
+      propertyPath: _offsetGainCurve.m_Curve.Array.data[3].outSlope
+      value: -2.4084246
+      objectReference: {fileID: 0}
+    - target: {fileID: 2918587901325712054, guid: 3400ad11addfdda49a6b66e0c24d1d90,
+        type: 3}
+      propertyPath: _offsetGainCurve.m_Curve.Array.data[3].tangentMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2918587901325712054, guid: 3400ad11addfdda49a6b66e0c24d1d90,
+        type: 3}
+      propertyPath: _offsetGainCurve.m_Curve.Array.data[3].inWeight
+      value: 0.1598273
       objectReference: {fileID: 0}
     - target: {fileID: 3210424439010181267, guid: 3400ad11addfdda49a6b66e0c24d1d90,
         type: 3}
@@ -286,6 +406,21 @@ PrefabInstance:
         type: 3}
       propertyPath: _cursingVolume
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5231672630854100834, guid: 3400ad11addfdda49a6b66e0c24d1d90,
+        type: 3}
+      propertyPath: _curseLines.Array.data[5]
+      value: HATE YOU!
+      objectReference: {fileID: 0}
+    - target: {fileID: 5231672630854100834, guid: 3400ad11addfdda49a6b66e0c24d1d90,
+        type: 3}
+      propertyPath: _curseLines.Array.data[6]
+      value: HATE YOU!
+      objectReference: {fileID: 0}
+    - target: {fileID: 5231672630854100834, guid: 3400ad11addfdda49a6b66e0c24d1d90,
+        type: 3}
+      propertyPath: _curseLines.Array.data[7]
+      value: HATE YOU!
       objectReference: {fileID: 0}
     - target: {fileID: 5277708819325495584, guid: 3400ad11addfdda49a6b66e0c24d1d90,
         type: 3}
