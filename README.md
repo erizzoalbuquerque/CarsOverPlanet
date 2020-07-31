@@ -1,7 +1,7 @@
-# CarsOverPlanet
-It'a a game about cars over a planet. And YOU CAN PLAY it now. Click [**here**](https://erizzoalbuquerque.github.io/CarsOverPlanet/Docs/Game/index.html)!
+# BAD CARS 
+It'a a game about cars saying verybad words. YOU CAN PLAY it now. Click [**here**](https://erizzoalbuquerque.github.io/CarsOverPlanet/Docs/Game/index.html)!
+WASD to Move. More bad words coming soon!
 
 ![Cover](/Docs/Images/cover.png)
 
-Just having fun with low poly aesthetics. Heavily inspired by this video: https://youtu.be/XldCg9sQYx0. Models from https://kenney.nl/assets.
- 
+Just having fun with low poly aesthetics. Heavily inspired by this video: https://youtu.be/XldCg9sQYx0. Models from https://kenney.nl/assets. Temp BG music is from Caowboy Bebop https://www.youtube.com/watch?v=l8wWa3O9cUo.
