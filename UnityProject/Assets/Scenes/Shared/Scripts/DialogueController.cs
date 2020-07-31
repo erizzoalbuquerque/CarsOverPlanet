@@ -16,10 +16,17 @@ public class DialogueController : MonoBehaviour
 
     public List<string> _curseLines;
     public List<string> _victoryLines;
+    public List<AudioClip> _cursingSounds;
+
+    public float _cursingVolume = 1f;
+
+    AudioSource _audioSource;
 
     // Start is called before the first frame update
     void Start()
     {
+        _audioSource = GetComponent<AudioSource>();
+
         _debugTrigger = false;
 
         this.transform.localScale = Vector3.zero;        
@@ -30,6 +37,8 @@ public class DialogueController : MonoBehaviour
     {
         if (_debugTrigger)
             Speak();
+
+        _audioSource.pitch = 1f * Time.timeScale;
     }
 
     [ContextMenu("Curse")]
@@ -39,9 +48,10 @@ public class DialogueController : MonoBehaviour
         _tmp.text = _curseLines[index];
 
         Speak();
+        SoundCursing();
     }
 
-    [ContextMenu("Curse")]
+    [ContextMenu("Victory")]
     public void SayAVictoryLine()
     {
         int index = Random.Range(0, _victoryLines.Count - 1);
@@ -67,5 +77,12 @@ public class DialogueController : MonoBehaviour
     private void OnDestroy()
     {
         speakSequence.Kill();
+    }
+
+    public void SoundCursing()
+    {
+        int index = Random.Range(0, _cursingSounds.Count - 1);
+
+        _audioSource.PlayOneShot(_cursingSounds[index], _cursingVolume);        
     }
 }

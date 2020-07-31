@@ -30,7 +30,6 @@ public class CrashSoundController : MonoBehaviour
         audioSource.pitch = Random.Range(pitchRange.x, pitchRange.y) * Time.timeScale;
 
         audioSource.PlayOneShot(audio, intensity * volume);
-        print("played");
     }
 
     private void OnCollisionEnter(Collision collision)

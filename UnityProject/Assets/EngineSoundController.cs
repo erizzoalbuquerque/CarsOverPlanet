@@ -14,6 +14,8 @@ public class EngineSoundController : MonoBehaviour
 
     public float TargetIntensity { get => intensity; set => intensity = value; }
 
+    float currentPitch = 0f;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -34,6 +36,7 @@ public class EngineSoundController : MonoBehaviour
         audioSource.volume = Mathf.MoveTowards(audioSource.volume, targetVolume, maxVariationPerSecond * Time.deltaTime);
 
         float targetPitch = Mathf.Lerp(enginePitchRange.x, enginePitchRange.y, intensity);
-        audioSource.pitch = Mathf.MoveTowards(audioSource.pitch, targetPitch, maxVariationPerSecond * Time.deltaTime) * Time.timeScale;
+        currentPitch = Mathf.MoveTowards(currentPitch, targetPitch, maxVariationPerSecond * Time.deltaTime);
+        audioSource.pitch = currentPitch * Time.timeScale;
     }
 }

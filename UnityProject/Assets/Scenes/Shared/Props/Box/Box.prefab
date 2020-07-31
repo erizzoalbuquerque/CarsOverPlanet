@@ -194,7 +194,12 @@ MonoBehaviour:
   volume: 2
   maxForce: 100
   audios:
-  - {fileID: 8300000, guid: 7929a56bb2b96274faca02eb1136210c, type: 3}
+  - {fileID: 8300000, guid: f28d51dd1987ff341b6d979179474b92, type: 3}
+  - {fileID: 8300000, guid: 6190dc71dee21a64cbe00b8cf8979c83, type: 3}
+  - {fileID: 8300000, guid: 2487562b5944aca46b6ede7e7c59cde7, type: 3}
+  - {fileID: 8300000, guid: e8508d0051cf1704e891e4b8ca52daff, type: 3}
+  - {fileID: 8300000, guid: b722f415a8a972947aecb07f4e0aed2b, type: 3}
+  - {fileID: 8300000, guid: 8f5a45c589bb5254e970e543feef77ea, type: 3}
   crashLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295

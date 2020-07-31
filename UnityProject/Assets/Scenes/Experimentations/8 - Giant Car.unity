@@ -452,10 +452,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 297498928}
     m_Modifications:
-    - target: {fileID: 422284770, guid: e367b11ba1af0cf4683f968345bdd214, type: 3}
-      propertyPath: volume
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 1660542557959104954, guid: e367b11ba1af0cf4683f968345bdd214,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3220,40 +3216,11 @@ PrefabInstance:
       propertyPath: _planet
       value: 
       objectReference: {fileID: 615144280}
-    - target: {fileID: 244370741, guid: 550f893d1b59f3240a56d131b01bb4ff, type: 3}
-      propertyPath: _gravity
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 1472510708033929063, guid: 550f893d1b59f3240a56d131b01bb4ff,
         type: 3}
       propertyPath: _crashEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 25213584}
-    - target: {fileID: 1472510708033929063, guid: 550f893d1b59f3240a56d131b01bb4ff,
-        type: 3}
-      propertyPath: _maxSteeringSpeed
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1472510708033929063, guid: 550f893d1b59f3240a56d131b01bb4ff,
-        type: 3}
-      propertyPath: _minForwardSpeedToFullSteering
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1472510708033929063, guid: 550f893d1b59f3240a56d131b01bb4ff,
-        type: 3}
-      propertyPath: _crashEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnPlayerCrashed
-      objectReference: {fileID: 0}
-    - target: {fileID: 1472510708033929063, guid: 550f893d1b59f3240a56d131b01bb4ff,
-        type: 3}
-      propertyPath: _crashLayerMask.m_Bits
-      value: 1847
-      objectReference: {fileID: 0}
-    - target: {fileID: 1472510708033929063, guid: 550f893d1b59f3240a56d131b01bb4ff,
-        type: 3}
-      propertyPath: _minForceToCrash
-      value: 100
-      objectReference: {fileID: 0}
     - target: {fileID: 1472510708033929080, guid: 550f893d1b59f3240a56d131b01bb4ff,
         type: 3}
       propertyPath: _center
