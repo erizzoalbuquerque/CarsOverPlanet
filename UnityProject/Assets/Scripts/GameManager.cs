@@ -4,6 +4,7 @@ using UnityEngine;
 using DG.Tweening;
 using Cinemachine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class GameManager : MonoBehaviour
 {
@@ -30,6 +31,11 @@ public class GameManager : MonoBehaviour
     [Space(), Header("Score Display")]
     public ScoreDisplayer _scoreDisplayer;
 
+    [Space(), Header("Audio")]
+    public AudioMixerSnapshot _defaultAudioSnapshot;
+    public AudioMixerSnapshot _crashingAudioSnapshot;
+    public AudioMixerSnapshot _gameOverAudioSnapshot;
+
     bool _playerChrashed = false;
 
     bool _gameOver = false;
@@ -42,6 +48,8 @@ public class GameManager : MonoBehaviour
         _gameOver = false;
         _score = 0;
         _scoreDisplayer.UpdateScore(_score, false);
+
+        _defaultAudioSnapshot.TransitionTo(0.1f);
     }
 
     // Update is called once per frame
@@ -55,6 +63,8 @@ public class GameManager : MonoBehaviour
     {
         if (_playerChrashed == true)
             return;
+
+        _gameOver = true;
 
         Time.timeScale = _slowMoMultiplier;
         Time.fixedDeltaTime = Time.fixedDeltaTime * _slowMoMultiplier;
@@ -77,6 +87,8 @@ public class GameManager : MonoBehaviour
 
         _playerChrashed = true;
         
+        _crashingAudioSnapshot.TransitionTo(0.1f);
+
         Invoke("DoSlowMotionCompleted", _slowMoTime);
     }
 
@@ -95,7 +107,9 @@ public class GameManager : MonoBehaviour
     void ActivateBustedText()
     {
         uiBusted.SetActive(true);
-        _gameOver = true;
+        //_gameOver = true;
+
+        _gameOverAudioSnapshot.TransitionTo(5f);
     }
 
     void Restart()

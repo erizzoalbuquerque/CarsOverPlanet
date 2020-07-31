@@ -1,0 +1,98 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &2233073162270720911
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 365661685, guid: 3400ad11addfdda49a6b66e0c24d1d90, type: 3}
+      propertyPath: engineVolumeRange.y
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 365661685, guid: 3400ad11addfdda49a6b66e0c24d1d90, type: 3}
+      propertyPath: engineVolumeRange.x
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 365661686, guid: 3400ad11addfdda49a6b66e0c24d1d90, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 365661688, guid: 3400ad11addfdda49a6b66e0c24d1d90, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -510085740333923798, guid: 4caff30c1c2338b4fbb1043c6988bad4,
+        type: 2}
+    - target: {fileID: 1021084238397813008, guid: 3400ad11addfdda49a6b66e0c24d1d90,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2918587901325712049, guid: 3400ad11addfdda49a6b66e0c24d1d90,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.9374661
+      objectReference: {fileID: 0}
+    - target: {fileID: 2918587901325712049, guid: 3400ad11addfdda49a6b66e0c24d1d90,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.0228534
+      objectReference: {fileID: 0}
+    - target: {fileID: 2918587901325712049, guid: 3400ad11addfdda49a6b66e0c24d1d90,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.5984843
+      objectReference: {fileID: 0}
+    - target: {fileID: 2918587901325712049, guid: 3400ad11addfdda49a6b66e0c24d1d90,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.29002106
+      objectReference: {fileID: 0}
+    - target: {fileID: 2918587901325712049, guid: 3400ad11addfdda49a6b66e0c24d1d90,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.8855633
+      objectReference: {fileID: 0}
+    - target: {fileID: 2918587901325712049, guid: 3400ad11addfdda49a6b66e0c24d1d90,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.025704
+      objectReference: {fileID: 0}
+    - target: {fileID: 2918587901325712049, guid: 3400ad11addfdda49a6b66e0c24d1d90,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.36194578
+      objectReference: {fileID: 0}
+    - target: {fileID: 2918587901325712049, guid: 3400ad11addfdda49a6b66e0c24d1d90,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2918587901325712049, guid: 3400ad11addfdda49a6b66e0c24d1d90,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -9157.168
+      objectReference: {fileID: 0}
+    - target: {fileID: 2918587901325712049, guid: 3400ad11addfdda49a6b66e0c24d1d90,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 34.201004
+      objectReference: {fileID: 0}
+    - target: {fileID: 2918587901325712049, guid: 3400ad11addfdda49a6b66e0c24d1d90,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -135.105
+      objectReference: {fileID: 0}
+    - target: {fileID: 2918587901325712051, guid: 3400ad11addfdda49a6b66e0c24d1d90,
+        type: 3}
+      propertyPath: m_Name
+      value: AiCar Follower Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 2918587901325712054, guid: 3400ad11addfdda49a6b66e0c24d1d90,
+        type: 3}
+      propertyPath: _waitTime
+      value: 1.5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3400ad11addfdda49a6b66e0c24d1d90, type: 3}
