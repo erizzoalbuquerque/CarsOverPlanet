@@ -1,6 +1,6 @@
-# BAD COP, BAD COP 
-It'a a game about cops screaming very bad words. YOU CAN PLAY it now. Click [**here**](https://erizzoalbuquerque.github.io/CarsOverPlanet/Docs/Game/index.html)!
-WASD to Move. More bad words regurlary updated!
+# CURSING COPS
+It'a a game about cops shouting very bad words. YOU CAN PLAY it now. Click [**here**](https://erizzoalbuquerque.github.io/CarsOverPlanet/Docs/Game/index.html)!
+WASD to Move. More bad words regurlary updated (not really)!
 
 ![Cover](/Docs/Images/cover.png)
 
