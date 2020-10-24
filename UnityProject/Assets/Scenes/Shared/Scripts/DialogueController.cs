@@ -81,6 +81,9 @@ public class DialogueController : MonoBehaviour
 
     public void SoundCursing()
     {
+        if (_audioSource == null)
+            _audioSource = GetComponent<AudioSource>();
+
         int index = Random.Range(0, _cursingSounds.Count - 1);
 
         _audioSource.PlayOneShot(_cursingSounds[index], _cursingVolume);        
