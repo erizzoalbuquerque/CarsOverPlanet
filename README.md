@@ -6,5 +6,5 @@ WASD to Move. More bad words regurlary updated (not really)!
 
 Just having fun with low poly aesthetics. Heavily inspired by this video: https://youtu.be/XldCg9sQYx0. Models from https://kenney.nl/assets. Temp BG music is from Cowboy Bebop https://www.youtube.com/watch?v=l8wWa3O9cUo.
 
-Designed by Eduardo Rizzo
+Designed by Eduardo Rizzo //
 Coded by Eduardo Rizzo and Renato Cherullo
